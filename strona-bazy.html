@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bazy Danych</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ========= NAGŁÓWEK ========= -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-database fa-2x"></i>
+        <h1>Bazy Danych 📚</h1>
+      </div>
+      <p class="subtitle">Strona z powtórzeniem materiału z tematów 1-12 💻</p>
+    </div>
+  </header>
+
+  <!-- ========= MENU NAWIGACYJNE ========= -->
+  <nav class="navbar">
+    <div class="container">
+      <ul>
+        <li><a href="#glowna"><i class="fas fa-home"></i> Strona Główna</a></li>
+        <li><a href="#podstawy"><i class="fas fa-book"></i> Podstawowe definicje</a></li>
+        <li><a href="#architektura"><i class="fas fa-project-diagram"></i> Architektura</a></li>
+        <li><a href="#modele"><i class="fas fa-shapes"></i> Modele danych</a></li>
+        <li><a href="#integralność"><i class="fas fa-shield-alt"></i> Integralność</a></li>
+        <li><a href="#funkcje"><i class="fas fa-cogs"></i> Funkcje i własności</a></li>
+        <li><a href="#serwery"><i class="fas fa-server"></i> Serwery baz danych</a></li>
+        <li><a href="#zasady"><i class="fas fa-clipboard-list"></i> Zasady projektowania</a></li>
+        <li><a href="#zwiazki"><i class="fas fa-link"></i> Związki między tabelami</a></li>
+        <li><a href="#normalizacja"><i class="fas fa-sort-amount-down"></i> Normalizacja</a></li>
+        <li><a href="#erd"><i class="fas fa-sitemap"></i> Diagramy ERD</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========= SEKCJA GŁÓWNA ========= -->
+  <section id="glowna" class="section glowna">
+    <div class="container">
+      <div class="hero-text">
+        <h2>Czym są bazy danych? 💾</h2>
+        <p>
+          Baza danych jest zbiorem danych z określonej dziedziny tematycznej zorganizowany 
+          w sposób ułatwiający do nich dostęp oraz narzędzi systemu <strong>SZBD</strong> przeznaczonego do 
+          <strong>zarządzania</strong>👀 bazą danych oraz <strong>gromadzenia</strong>🧳, 
+          <strong>przekształcania</strong> 🔄 i <strong>wyszukiwania</strong>🔍 danych.
+        </p>
+        <p>
+          W przeciwieństwie do plików tekstowych, bazy danych zapewniają:
+        </p>
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-check-circle fa-2x"></i>
+            <h3>Integralność ✅</h3>
+          </div>
+          <div class="feature">
+            <i class="fas fa-lock fa-2x"></i>
+            <h3>Bezpieczeństwo 🔐</h3>
+          </div>
+          <div class="feature">
+            <i class="fas fa-chart-line fa-2x"></i>
+            <h3>Trwałość 📈</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========= PODSTAWOWE DEFINICJE ========= -->
+  <section id="podstawy" class="section podstawy">
+    <div class="container">
+      <h2><i class="fas fa-book-open"></i> Podstawowe definicje 📖</h2>
+      
+      <div class="cards">
+        <!-- 1. Baza danych -->
+        <div class="card">
+          <i class="fas fa-database fa-3x icon"></i>
+          <h3>Baza danych 💾</h3>
+          <p>Uporządkowany zbiór danych o danej tematyce, umożliwiający modyfikowanie i przekształcanie danych.</p>
+        </div>
+
+        <!-- 2. DBMS -->
+        <div class="card">
+          <i class="fas fa-cogs fa-3x icon"></i>
+          <h3>DBMS 🛠️</h3>
+          <p>System Zarządzania Bazą Danych – oprogramowanie (np. MySQL, PostgreSQL) do tworzenia i obsługi baz.</p>
+        </div>
+
+        <!-- 3. Tabela -->
+        <div class="card">
+          <i class="fas fa-th fa-3x icon"></i>
+          <h3>Tabela 📊</h3>
+          <p>Struktura przechowująca dane, składająca się z wierszy (rekordy) i kolumn (atrybuty).</p>
+        </div>
+
+        <!-- 4. Rekord / Krotka -->
+        <div class="card">
+          <i class="fas fa-file-alt fa-3x icon"></i>
+          <h3>Rekord / Krotka 📝</h3>
+          <p>Pojedynczy wiersz w tabeli, zawierający komplet informacji o jednym obiekcie (np. jeden klient).</p>
+        </div>
+
+        <!-- 5. Atrybut -->
+        <div class="card">
+          <i class="fas fa-tag fa-3x icon"></i>
+          <h3>Atrybut 🏷️</h3>
+          <p>Kolumna w tabeli opisująca cechę encji (np. imię, wiek, email, cena).</p>
+        </div>
+
+        <!-- 6. Encja -->
+        <div class="card">
+          <i class="fas fa-user-circle fa-3x icon"></i>
+          <h3>Encja 👤</h3>
+          <p>Obiekt lub pojęcie ze świata rzeczywistego, które chcemy opisać w bazie (np. Pracownik, Produkt).</p>
+        </div>
+
+        <!-- 7. Klucz główny -->
+        <div class="card">
+          <i class="fas fa-key fa-3x icon"></i>
+          <h3>Klucz główny 🔑</h3>
+          <p>Atrybut (lub zestaw atrybutów) jednoznacznie identyfikujący każdy rekord w tabeli (np. PESEL, ID).</p>
+        </div>
+
+        <!-- 8. Klucz obcy -->
+        <div class="card">
+          <i class="fas fa-link fa-3x icon"></i>
+          <h3>Klucz obcy 🔗</h3>
+          <p>Atrybut w jednej tabeli, który odwołuje się do klucza głównego w innej tabeli (tworzy relację).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ========= ARCHITEKTURA BAZ DANYCH ========= -->
+  <section id="architektura" class="section architektura">
+    <div class="container">
+      <h2><i class="fas fa-project-diagram"></i> Architektura baz danych 🏗️</h2>
+      <div class="content-grid">
+        <div class="text-block">
+          <h3>W praktyce używamy 2 architektur:</h3>
+          <h3>Model 3-warstwowy 🚦</h3>
+          <p>
+            Klient wysyła żądanie (np. „Pokaż listę produktów”) ➡️ warstwa logiki biznesowej (serwer aplikacji) je przetwarza 
+            ➡️ warstwa danych (baza danych) udostępnia potrzebne informacje ➡️ wynik wraca przez serwer aplikacji do Klienta.
+            Dzięki temu system jest bezpieczniejszy,
+          </p>
+          <br>
+          <br>
+          <br>
+          <h3>Model Klient-Serwer 🔄</h3>
+          <p>
+            Klient wysyła żądanie (np. "Pokaż listę produktów") ➡️ Serwer je przetwarza ➡️ Zwraca wynik do Klienta. 
+            Dzięki temu wiele komputerów może korzystać z jednej, spójnej bazy danych jednocześnie.
+          </p>
+        </div>
+        
+        <!-- OBRAZEK -->
+        <div class="diagram-container">
+          <img src="architektura.png" alt="Schemat architektury klient-serwer bazy danych" class="arch-img">
+          <p class="img-caption">Rys. 1: Schemat przepływu danych w architekturze klient-serwer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= MODELE DANYCH ========= -->
+  <section id="modele" class="section modele">
+    <div class="container">
+      <h2><i class="fas fa-shapes"></i> Modele danych 📐</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="fas fa-tree fa-3x icon"></i>
+          <h3>Hierarchiczny 🌳</h3>
+          <p>Dane w formie odwróconego drzewa (np. katalog plików). <br>➡️ <strong>Plusy:</strong> Prosty, szybki.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-project-diagram fa-3x icon"></i>
+          <h3>Sieciowy 🔗</h3>
+          <p>Dane w grafie – każdy węzeł może mieć wielu rodziców. <br>⚠️ <strong>Minusy:</strong> Złożony.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-table fa-3x icon"></i>
+          <h3>Relacyjny 📋</h3>
+          <p>Najpopularniejszy, dane w tabelach. <br>✅ <strong>Przykłady:</strong> MySQL, PostgreSQL.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-cube fa-3x icon"></i>
+          <h3>Obiektowy 🧱</h3>
+          <p>Dane jako obiekty z metodami. <br>💡 <strong>Użycie:</strong> MongoDB.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= INTEGRALNOŚĆ DANYCH ========= -->
+  <section id="integralność" class="section integralność">
+    <div class="container">
+      <h2><i class="fas fa-shield-alt"></i> Integralność danych 🛡️</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Integralność</h3>
+          <p>Formalna poprawność bazy danych, jej fizycznej organizacji, zgodność ze schematem bazy danych i regułami dostępu.</p>
+        </div>
+        <div class="card">
+          <h3>Integralność encji 🔑</h3>
+          <p>Każda tabela powinna mieć klucz główny – kolumnę, w którejnie mogą wystąpić wartości NULL oraz w której dane nie mogą się powtarzać.</p>
+        </div>
+        <div class="card">
+          <h3>Integralność referencyjna 🔗</h3>
+          <p>Zapewnia poprawność powiązań między tabelami, tzn. klucz obcy musi wskazywać istniejący rekord w innej tabeli</p>
+        </div>
+        <div class="card">
+          <h3>Integralność sematyczna 📏</h3>
+          <p>Gwarantuje logiczną poprawność danych zgodnie z ich znaczeniem i regułami biznesowymi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= FUNKCJE I WŁASNOŚCI ========= -->
+  <section id="funkcje" class="section funkcje">
+    <div class="container">
+      <h2><i class="fas fa-cogs"></i> Funkcje i własności ⚙️</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Przechowywanie danych ✅</h3>
+          <p>Bezpieczne i uporządkowane gromadzenie informacji.</p>
+        </div>
+        <div class="card">
+          <h3>Bezpieczeństwo 🔐</h3>
+          <p>Hasła, szyfrowanie, role użytkowników.</p>
+        </div>
+        <div class="card">
+          <h3>Wyszukiwanie i pobieranie danych</h3>
+          <p>Szybki dostęp do potrzebnych rekordów.</p>
+        </div>
+        <div class="card">
+          <h3>Niezawodność 🛠️</h3>
+          <p>Kopie zapasowe, replikacja, odzyskiwanie po awarii.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= SERWERY BAZ DANYCH ========= -->
+  <section id="serwery" class="section serwery">
+    <div class="container">
+      <h2><i class="fas fa-server"></i> Serwery baz danych 🖥️</h2>
+      <div class="content-grid">
+        <div class="text-block">
+          <h3>Rola serwera 🎯</h3>
+          <p>
+            Serwer przetwarza zapytania SQL, zarządza transakcjami i bezpieczeństwem.
+            <br>⚡ <strong>Kluczowe zadania:</strong> Kontrola i przechowanie danych.
+          </p>
+          <h3>Popularne systemy 🏆</h3>
+          <ul>
+            <li>🐬 <strong>MySQL</strong> – prosty, szybki, używany w WordPress.</li>
+            <li>🐘 <strong>PostgreSQL</strong> – zaawansowany, obsługuje JSON i geolokalizację.</li>
+            <li>🏛️ <strong>Oracle</strong> – dla dużych korporacji (banki).</li>
+            <li>🪟 <strong>SQL Server</strong> – integracja z Windows i .NET.</li>
+          </ul>
+        </div>
+        <div class="serwery-logos">
+          <div class="logo-item"><i class="fab fa-linux fa-4x"></i></div>
+          <div class="logo-item"><i class="fas fa-database fa-4x"></i></div>
+          <div class="logo-item"><i class="fab fa-docker fa-4x"></i></div>
+          <div class="logo-item"><i class="fab fa-microsoft fa-4x"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= ZASADY PROJEKTOWANIA ========= -->
+  <section id="zasady" class="section zasady">
+    <div class="container">
+      <h2><i class="fas fa-clipboard-list"></i> Zasady projektowania baz danych 📋</h2>
+      <ol>
+        <li><strong>🔍 Rzeczywsitość</strong></li>
+        <li><strong>📝 Analiza wymagań</strong> – początkowe informacje od użytkowników.</li>
+        <li><strong>🧩 Modelowanie koncepcyjne</strong> – modelowanie schematów.</li>
+        <li><strong>📐 Modelowanie logiczne</strong> – określenie zawartośći bazy.</li>
+        <li><strong>🔑 Modelowanie fizyczne</strong> – dostosowanie do określonej konfiguracji.</li>
+        <li><strong>⚙️ System bazy danych</strong></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========= ZWIĄZKI MIĘDZY TABELAMI ========= -->
+  <section id="zwiazki" class="section zwiazki">
+    <div class="container">
+      <h2><i class="fas fa-link"></i> Związki między tabelami 🔗</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>1:1 (Jeden do jednego) 🔢</h3>
+          <p>Każdy rekord z Tabeli A ma <strong>dokładnie jeden</strong> w Tabeli B.</p>
+          <p><strong>Przykład:</strong> Użytkownik ↔ Profil (jeden profil na użytkownika).</p>
+        </div>
+        <div class="card">
+          <h3>1:N (Jeden do wielu) 🔢➡️🔢🔢</h3>
+          <p>Jeden rekord z Tabeli A może mieć <strong>wiele</strong> w Tabeli B.</p>
+          <p><strong>Przykład:</strong> Klient ↔ Zamówienia.</p>
+        </div>
+        <div class="card">
+          <h3>N:M (Wiele do wielu) 🔢🔢➡️🔢🔢</h3>
+          <p>Wiele rekordów z Tabeli A może być powiązanych z wieloma z Tabeli B.</p>
+          <p><strong>Przykład:</strong> Studenci ↔ Przedmioty.</p>
+          <p><strong>Rozwiązanie:</strong> Tabela pośrednia (np. `Zapisy`).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= NORMALIZACJA ========= -->
+  <section id="normalizacja" class="section normalizacja">
+    <div class="container">
+      <h2><i class="fas fa-sort-amount-down"></i> Normalizacja tabel 📐</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>1NF (Pierwsza forma) 🔢</h3>
+          <ul>
+            <li>Atomowe wartości w kolumnach ✅</li>
+            <li>Brak powtarzających się grup ❌</li>
+            <li>Klucz główny unikalny 🔑</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>2NF (Druga forma) ➕</h3>
+          <ul>
+            <li>Spełnia 1NF ✅</li>
+            <li>Tabele przechowują dane tylko konkretnej klasy ❌</li>
+            <li>Tabele powiązane kluczami obcymi.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>3NF (Trzecia forma) ➕➕</h3>
+          <ul>
+            <li>Spełnia 2NF ✅</li>
+            <li>Eliminacja pol niezależnych od klucza❌</li>
+            <li>Atrybuty zależą tylko od klucza głównego.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= DIAGRAMY ERD ========= -->
+  <section id="erd" class="section erd">
+    <div class="container">
+      <h2><i class="fas fa-sitemap"></i> Diagramy ERD 🗺️</h2>
+      <p>
+        ERD (Entity-Relationship Diagram) to graficzna reprezentacja struktury bazy danych.
+        <br>👉 <strong>Pomaga:</strong> Wizualizować encje, atrybuty i relacje.
+      </p>
+      
+      <div class="erd-legend">
+        <div class="legend-item">
+          <strong>Tabela</strong><span class="line"></span>
+        </div>
+        <div class="legend-item">
+          <strong>Encja</strong> (np. Użytkownik)<span class="line"></span>
+        </div>
+        <div class="legend-item">
+          <strong>Atrybut</strong> (np. imię)<span class="line"></span>
+        </div>
+        <div class="legend-item">
+           <strong>Relacja</strong> (np. zakupy)<span class="line"></span>
+        </div>
+        <div class="legend-item">
+           <strong>Jeden do jedenego </strong><span class="line"></span>
+        </div>
+        <div class="legend-item">
+           <strong>Jeden do wielu </strong><span class="line"></span>
+        </div>
+        <div class="legend-item">
+           <strong>Wiele do wielu</strong>
+        </div>
+      </div>
+
+<!-- ========= DIAGRAMY ERD (OBRAZEK) ========= -->
+      <div class="erd-image-container">
+        <img src="diagram_erd.png" alt="Diagram ERD bazy danych" class="erd-main-img">
+      </div>
+      </section>
+
+
+  <!-- ========= STOPKA ========= -->
+  <footer>
+  <div class="container">
+    <p>Autor: <strong>Adam Iskra</strong></p>
+    <a href="#top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i> Powrót do początku strony
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>

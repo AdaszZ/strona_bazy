@@ -292,13 +292,6 @@ header .logo {
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-.img-caption {
-  font-size: 0.9rem;
-  color: #777;
-  font-style: italic;
-  margin: 0;
-}
-
 
 /* ========= DIAGRAMY ERD ========= */
 .erd-legend {
@@ -450,4 +443,5 @@ footer p {
 .back-to-top i {
   margin-right: 5px;
   font-size: 0.8rem;
+
 }
